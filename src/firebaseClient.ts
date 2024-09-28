@@ -3,10 +3,12 @@ import {
   FirebaseApp,
 } from "firebase/app";
 import { Auth, getAuth } from "firebase/auth";
+import { FirebaseStorage, getStorage } from "firebase/storage";
 import { clientConfig } from "./config";
 
 let clientApp: FirebaseApp;
 let auth: Auth;
+let storage: FirebaseStorage;
 
 export function getFirebaseAuth() {
   if (!clientApp) {
@@ -17,5 +19,9 @@ export function getFirebaseAuth() {
     auth = getAuth(clientApp);
   }
 
-  return { clientApp, auth };
+  if (!storage) {
+    storage = getStorage(clientApp);
+  }
+
+  return { clientApp, auth, storage };
 }

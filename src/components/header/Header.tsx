@@ -2,12 +2,17 @@
 
 import { getAuth, signOut } from "firebase/auth";
 import { getFirebaseAuth } from "@/firebaseClient";
+import styles from "./Header.module.scss";
+import { User } from "@/app/_utils/asyncFunctions";
 
 interface HeaderProps {
   uid: string;
+  user: User;
+  title: string;
 }
 
 export function Header(props: HeaderProps) {
+  const { user, title } = props;
   const onLogout = async () => {
     const { clientApp } = getFirebaseAuth();
 
@@ -29,10 +34,13 @@ export function Header(props: HeaderProps) {
     await fetch("/api/logout");
   };
   return (
-    <div className="">
-      <h1>ヘッダータイトル</h1>
-      <div className="">ログイン中のユーザー</div>
-      <button onClick={onLogout}>ログアウト</button>
+    <div className={styles.header}>
+      <h1>{title}</h1>
+      <div className={styles.userInfo}>
+        <img src={user.iconURL} alt="Preview" className={styles.icon} />
+        <div className={styles.userName}>{user.lastNameKana}</div>
+        <button onClick={onLogout}>→</button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,55 @@
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding-right: 0.85rem;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .radioButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    margin-right: 0.5rem;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 50%;
+      background-color: #0070f3;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.radioLabel input[type="radio"]:checked + .radioButton::after {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .radioGroup {
+    flex-direction: row; /* PCでは横並び */
+  }
+}

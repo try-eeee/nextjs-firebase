@@ -4,6 +4,7 @@ import {
   cert,
   getApps,
 } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
 const adminApp =
@@ -12,6 +13,8 @@ const adminApp =
         credential: cert(serverConfig.serviceAccount),
       })
     : getApps()[0];
-const db = getFirestore(adminApp);
 
-export { db };
+const db = getFirestore(adminApp);
+const auth = getAuth(adminApp);
+
+export { db, auth };

@@ -3,7 +3,9 @@ import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { clientConfig, serverConfig } from "../config";
 import Article from "./(auth)/article/page";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/header/Header";
+import { MainLayout } from "@/components/mainLayout/MainLayout";
+import { getUser } from "./_utils/asyncFunctions";
 
 export default async function Home() {
   const tokens = await getTokens(cookies(), {
@@ -17,18 +19,22 @@ export default async function Home() {
     notFound();
   }
 
-  console.log("uid", tokens?.decodedToken.uid);
+  const { uid } = tokens.decodedToken;
+
+  if (!uid) {
+    notFound();
+  }
+
+  const user = await getUser(uid);
+
+  if (!user) {
+    notFound();
+  }
 
   return (
-    <main className="">
-      <Header uid={tokens?.decodedToken.uid ?? ""} />
-      <h1 className="">Super secure home page</h1>
-      <p>
-        Only <strong>{tokens?.decodedToken.email}</strong> holds the magic key
-        to this kingdom!"
-      </p>
-
-      <Article uid={tokens?.decodedToken.uid} />
-    </main>
+    <MainLayout>
+      <Header uid={uid} user={user} title="記事一覧" />
+      <Article uid={uid} />
+    </MainLayout>
   );
 }

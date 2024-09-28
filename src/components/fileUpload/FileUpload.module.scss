@@ -1,0 +1,27 @@
+.previewContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.closeButton {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.inputHidden {
+  visibility: hidden;
+}

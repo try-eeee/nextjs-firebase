@@ -1,0 +1,21 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.loginButton {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  text-align: left;
+}

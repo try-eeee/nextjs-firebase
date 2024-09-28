@@ -1,25 +1,17 @@
-import { getArticles } from "./actions";
+import { Article } from "./_components/Articles";
+import { getArticles } from "./_utils/asyncFunctions";
 
 interface ArticleProps {
   uid: string;
 }
 
-export default async function Article(props: ArticleProps) {
+export default async function ArticlePage(props: ArticleProps) {
   const { uid } = props;
-  const dataList = await getArticles(uid);
+  const articles = await getArticles(uid);
 
-  if (!dataList) {
+  if (!articles) {
     return <></>;
   }
 
-  return (
-    <div>
-      <h1>Firestore Data</h1>
-      <ul>
-        {dataList.map((item, index) => (
-          <li key={index}>{JSON.stringify(item)}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <Article articles={articles} uid={uid} />;
 }

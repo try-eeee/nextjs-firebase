@@ -1,0 +1,21 @@
+.checkbox {
+  margin: 16px 0 8px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 8px;
+  }
+
+  .label {
+    a {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.form {
+  padding: 1rem;
+}
+
+.header {
+  padding: 1em;
+  background-color: #cccccc;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .closeIcon {
+    cursor: pointer;
+  }
+}
+
+.footer {
+  border-top: 1px solid #cccccc;
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.viewLabel {
+  padding-bottom: 0.5rem;
+}
+
+.viewTitle {
+  padding-bottom: 1rem;
+}
+
+.viewContent {
+  padding-bottom: 1rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: flex-end;
+}

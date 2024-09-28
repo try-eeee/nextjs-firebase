@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PortFolio Nextjs with Firebase App",
+  title: "文書投稿システム",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={``}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
