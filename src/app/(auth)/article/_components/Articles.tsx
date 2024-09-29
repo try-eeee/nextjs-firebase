@@ -13,6 +13,8 @@ import { formatDate } from "@/utils/formatDate";
 import { useDialog } from "@/components/dialog/Dialog";
 import { useRef, useState } from "react";
 import { ArticleEditorModal, OperationType } from "./ArticleEditorModal";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaEdit, FaRegEye } from "react-icons/fa";
 
 interface ArticleProps {
   articles: Article[];
@@ -67,37 +69,32 @@ export function Article(props: ArticleProps) {
             <TableHeader>記事ID</TableHeader>
             <TableHeader>更新日時</TableHeader>
             <TableHeader>タイトル</TableHeader>
-            <TableHeader>編集 / 閲覧</TableHeader>
-            <TableHeader>削除</TableHeader>
+            <TableHeader>閲覧 / 編集 / 削除</TableHeader>
           </TableRow>
         }
         tableRow={
           <>
             {articles.map((article, rowIndex) => (
               <TableRow key={rowIndex}>
-                <TableCell>{article.articleId}</TableCell>
-                <TableCell>{formatDate(article.createdAt)}</TableCell>
-                <TableCell>{article.title}</TableCell>
-                <TableCell>
-                  {article.isSelf ? (
-                    <Button onClick={() => handleEditArticle(article)}>
-                      編集
-                    </Button>
-                  ) : (
-                    <Button onClick={() => handleViewArticle(article)}>
-                      詳細
-                    </Button>
-                  )}
+                <TableCell headerLabel="記事ID" width={150}>
+                  {article.articleId}
                 </TableCell>
-                <TableCell>
-                  {article.isSelf && (
-                    <Button
-                      buttonType="danger"
-                      onClick={() => handleDeleteArticle(article)}
-                    >
-                      削除
-                    </Button>
-                  )}
+                <TableCell headerLabel="更新日時" width={150}>
+                  {formatDate(article.createdAt)}
+                </TableCell>
+                <TableCell headerLabel="タイトル">{article.title}</TableCell>
+                <TableCell headerLabel="閲覧 / 編集 / 削除" width={180}>
+                  <div className={styles.editCell}>
+                    <FaRegEye onClick={() => handleViewArticle(article)} />
+                    {article.isSelf && (
+                      <>
+                        <FaEdit onClick={() => handleEditArticle(article)} />
+                        <FaRegTrashAlt
+                          onClick={() => handleEditArticle(article)}
+                        />
+                      </>
+                    )}
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

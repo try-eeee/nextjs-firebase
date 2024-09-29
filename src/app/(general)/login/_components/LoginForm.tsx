@@ -79,7 +79,7 @@ export default function LoginForm() {
         </div>
         {error && (
           <div className={styles.error} role="alert">
-            <span className="">{error}</span>
+            {error}
           </div>
         )}
         <Button type="submit" className={styles.loginButton}>
@@ -88,8 +88,8 @@ export default function LoginForm() {
         <p>
           まだ会員登録がお済みでないですか?
           <br />
-          <Link href="/register" className="">
-            新規会員登録は こちら
+          <Link href="/register" className={styles.registerLink}>
+            新規会員登録は <span>こちら</span>
           </Link>
         </p>
       </form>

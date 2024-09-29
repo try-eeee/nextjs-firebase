@@ -4,6 +4,10 @@
   align-items: center;
   min-height: 100vh;
   background-color: #f0f0f0;
+
+  @media (max-width: 768px) {
+    background: white;
+  }
 }
 
 .box {
@@ -11,7 +15,12 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: var(--box-width, 100%); // デフォルト値を設定
-  max-width: var(--box-max-width, 400px); // デフォルト値を設定
+  width: var(--box-width, 100%);
+  max-width: var(--box-max-width, 400px);
   text-align: center;
+
+  @media (max-width: 768px) {
+    box-shadow: none;
+    padding: 1rem;
+  }
 }

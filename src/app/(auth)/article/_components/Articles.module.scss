@@ -2,3 +2,16 @@
   display: flex;
   justify-items: end;
 }
+
+.editCell {
+  display: flex;
+  justify-content: start;
+
+  svg {
+    margin: 0.6rem;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: end;
+  }
+}

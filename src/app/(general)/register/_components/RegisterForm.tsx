@@ -68,7 +68,6 @@ export function RegisterForm() {
   });
 
   const onSubmit = async (data: RegisterFormValues) => {
-    console.log("onSubmit", data);
     setCustomErrors({
       matchedPassword: "",
       submit: "",
@@ -86,8 +85,6 @@ export function RegisterForm() {
     try {
       uid = await createUser(data);
       const iconURL = await imageUpload(uid);
-
-      console.log("iconURL", iconURL);
 
       if (!iconURL) {
         throw new Error("ダウンロードした画像取得に失敗しました");
@@ -311,13 +308,14 @@ export function RegisterForm() {
         <div className={`${styles.fullWidth} ${styles.alignCenter}`}>
           <CheckBoxWithLabel register={register("agreement")}>
             <>
-              利用規約に同意する
+              利用規約に同意する 利用規約は
               <a
                 href="https://luna-matching.notion.site/a714620bbd8740d1ac98f2326fbd0bbc"
                 target="_blank"
                 rel="noopener noreferrer"
+                className={styles.agreementLink}
               >
-                利用規約はこちら
+                こちら
               </a>
             </>
           </CheckBoxWithLabel>
@@ -336,7 +334,7 @@ export function RegisterForm() {
 
           <p className={styles.fullWidth}>
             既にアカウントをお持ちですか?
-            <Link href="/login">
+            <Link href="/login" className={styles.loginLink}>
               ログインは <span>こちら</span>
             </Link>
           </p>

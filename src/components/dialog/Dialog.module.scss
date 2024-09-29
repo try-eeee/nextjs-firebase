@@ -14,5 +14,9 @@
     margin-left: auto;
     margin-right: auto;
     border: 0;
+
+    @media (max-width: 768px) {
+      width: 90vw;
+    }
   }
 }

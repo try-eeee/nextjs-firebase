@@ -19,6 +19,7 @@ import { Article } from "../_utils/asyncFunctions";
 import { Input } from "@/components/input/Input";
 import { Label } from "@/components/label/Label";
 import { FirebaseError } from "firebase-admin";
+import { IoMdClose } from "react-icons/io";
 
 export type OperationType = "edit" | "create" | "delete" | "view";
 
@@ -128,9 +129,7 @@ export function ArticleEditorModal(props: ArticleEditorModalProps) {
               }[operationType]
             }
           </span>
-          <span className={styles.closeIcon} onClick={handleCloseModal}>
-            ×
-          </span>
+          <IoMdClose className={styles.closeIcon} onClick={handleCloseModal} />
         </div>
         <div className={styles.form}>
           {operationType === "view" ? (

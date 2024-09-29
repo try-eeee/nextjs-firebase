@@ -27,7 +27,13 @@ export function TableRow(props: ComponentProps<"tr">) {
   return <tr {...rest}>{children}</tr>;
 }
 
-export function TableCell(props: ComponentProps<"td">) {
-  const { children, ...rest } = props;
-  return <td {...rest}>{children}</td>;
+export function TableCell(
+  props: ComponentProps<"td"> & { headerLabel: string }
+) {
+  const { children, headerLabel, ...rest } = props;
+  return (
+    <td {...rest} data-label={headerLabel}>
+      {children}
+    </td>
+  );
 }
