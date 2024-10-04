@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog UnitTest Snapshot Test Of Dialog 1`] = `
+<DocumentFragment>
+  <dialog
+    class="dialog"
+  >
+    <div
+      class="contents"
+    >
+      コンテンツ
+    </div>
+  </dialog>
+</DocumentFragment>
+`;

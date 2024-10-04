@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUpload UnitTest Snapshot Test Of FileUpload 1`] = `
+<DocumentFragment>
+  <label
+    for="fileInput"
+  >
+    <button
+      class="button default size-S"
+    >
+      画像をアップロード
+    </button>
+    <input
+      accept="image/*"
+      class="inputHidden"
+      id="fileInput"
+      type="file"
+    />
+  </label>
+</DocumentFragment>
+`;

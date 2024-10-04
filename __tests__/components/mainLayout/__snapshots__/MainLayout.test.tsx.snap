@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainLayout UnitTest Snapshot Test Of MainLayout 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    コンテンツ
+  </div>
+</DocumentFragment>
+`;

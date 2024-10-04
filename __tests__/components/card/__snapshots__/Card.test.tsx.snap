@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card UnitTest Snapshot Test Of Card 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+    title="新規登録"
+  >
+    <div
+      class="title"
+    >
+      新規登録
+    </div>
+    コンテンツ
+  </div>
+</DocumentFragment>
+`;

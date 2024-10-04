@@ -90,7 +90,7 @@ export function Article(props: ArticleProps) {
                       <>
                         <FaEdit onClick={() => handleEditArticle(article)} />
                         <FaRegTrashAlt
-                          onClick={() => handleEditArticle(article)}
+                          onClick={() => handleDeleteArticle(article)}
                         />
                       </>
                     )}

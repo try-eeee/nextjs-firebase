@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea UnitTest Snapshot Test Of Textarea 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea"
+  />
+</DocumentFragment>
+`;

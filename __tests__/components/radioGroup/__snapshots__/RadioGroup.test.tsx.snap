@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup UnitTest Snapshot Test Of RadioGroup 1`] = `
+<DocumentFragment>
+  <div
+    class="radioGroup"
+  >
+    <label
+      class="radioLabel"
+    >
+      <input
+        name="gender"
+        type="radio"
+        value="male"
+      />
+      <span
+        class="radioButton"
+      />
+      男性
+    </label>
+    <label
+      class="radioLabel"
+    >
+      <input
+        name="gender"
+        type="radio"
+        value="female"
+      />
+      <span
+        class="radioButton"
+      />
+      女性
+    </label>
+    <label
+      class="radioLabel"
+    >
+      <input
+        name="gender"
+        type="radio"
+        value="other"
+      />
+      <span
+        class="radioButton"
+      />
+      その他
+    </label>
+  </div>
+</DocumentFragment>
+`;

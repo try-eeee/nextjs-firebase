@@ -7,7 +7,7 @@ import {
   deleteUser,
   RegisterFormValues,
   updateUser,
-} from "../../action";
+} from "../../actions";
 import { useRouter } from "next/navigation";
 import { FirebaseError } from "firebase-admin";
 import { Label } from "@/components/label/Label";

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table UnitTest Snapshot Test Of Table 1`] = `
+<DocumentFragment>
+  <table
+    class="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          テストID
+        </th>
+        <th>
+          テスト日時
+        </th>
+        <th>
+          テストタイトル
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          data-label="テストID"
+          width="150"
+        >
+          1122
+        </td>
+        <td
+          data-label="テスト日時"
+          width="150"
+        >
+          2024/11/07
+        </td>
+        <td
+          data-label="タイトル"
+          width="150"
+        >
+          テストタイトル
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

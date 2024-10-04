@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBoxWithLabel UnitTest Snapshot Test Of CheckBoxWithLabel 1`] = `
+<DocumentFragment>
+  <label
+    class="checkbox"
+  >
+    <input
+      type="checkbox"
+    />
+    <span
+      class="label"
+    >
+      利用規約に同意する 利用規約は
+      <a
+        href="#"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        こちら
+      </a>
+    </span>
+  </label>
+</DocumentFragment>
+`;

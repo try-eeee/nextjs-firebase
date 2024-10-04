@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm UnitTest Snapshot Test Of LoginForm 1`] = `
+<DocumentFragment>
+  <main>
+    <h1
+      class="title"
+    >
+      ログイン
+    </h1>
+    <form
+      action="#"
+      class="form"
+    >
+      <div>
+        <label
+          class="label left"
+          for="email"
+        >
+          メールアドレス
+        </label>
+        <input
+          class="input"
+          id="email"
+          name="email"
+          placeholder="name@company.com"
+          required=""
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="mb5rem"
+      >
+        <label
+          class="label left"
+          for="password"
+        >
+          パスワード
+        </label>
+        <input
+          class="input"
+          id="password"
+          name="password"
+          placeholder="••••••••"
+          required=""
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        class="button default size-S"
+        type="submit"
+      >
+        ログイン
+      </button>
+      <p>
+        まだ会員登録がお済みでないですか?
+        <br />
+        <a
+          class="registerLink"
+          href="/register"
+        >
+          新規会員登録は 
+          <span>
+            こちら
+          </span>
+        </a>
+      </p>
+    </form>
+  </main>
+</DocumentFragment>
+`;

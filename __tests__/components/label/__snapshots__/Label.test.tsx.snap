@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label UnitTest Snapshot Test Of Label 1`] = `
+<DocumentFragment>
+  <label
+    class="label center"
+    for="lastName"
+  >
+    姓
+    <span
+      class="required"
+    >
+      必須
+    </span>
+  </label>
+</DocumentFragment>
+`;
