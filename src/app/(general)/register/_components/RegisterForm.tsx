@@ -59,7 +59,6 @@ export function RegisterForm() {
     setValue,
     setError,
     clearErrors,
-    getValues,
     formState: { errors },
   } = useForm<RegisterFormValues>({
     mode: "onSubmit",

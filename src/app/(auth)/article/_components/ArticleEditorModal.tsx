@@ -34,13 +34,6 @@ export function ArticleEditorModal(props: ArticleEditorModalProps) {
   const { operationType, aricleRegisterModal, article, uid } = props;
   const { ref: myRef, closeModal } = useDialog(aricleRegisterModal);
 
-  useEffect(() => {
-    reset({
-      title: article?.title ?? "",
-      content: article?.content ?? "",
-    });
-  }, [article]);
-
   const {
     register,
     handleSubmit,
@@ -52,6 +45,13 @@ export function ArticleEditorModal(props: ArticleEditorModalProps) {
     mode: "onSubmit",
     resolver: zodResolver(articleEditorSchema),
   });
+
+  useEffect(() => {
+    reset({
+      title: article?.title ?? "",
+      content: article?.content ?? "",
+    });
+  }, [reset, article]);
 
   const onSubmit = async (data: CreateArticle) => {
     try {

@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript/no-var-requires
-const nextJest = require("next/jest");
+import nextJest from "next/jest";
 
 const createJestConfig = nextJest({
   dir: "./",
@@ -14,4 +13,4 @@ const config = {
   },
 };
 
-module.exports = createJestConfig(config);
+export default createJestConfig(config);

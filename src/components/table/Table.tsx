@@ -17,7 +17,7 @@ export function Table(props: TableProps) {
   );
 }
 
-export function TableHeader<HeaderId = string>(props: ComponentProps<"th">) {
+export function TableHeader(props: ComponentProps<"th">) {
   const { children, ...rest } = props;
   return <th {...rest}>{children}</th>;
 }

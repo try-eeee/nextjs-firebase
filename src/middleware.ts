@@ -17,20 +17,20 @@ export async function middleware(request: NextRequest) {
     cookieSignatureKeys: serverConfig.cookieSignatureKeys,
     cookieSerializeOptions: serverConfig.cookieSerializeOptions,
     serviceAccount: serverConfig.serviceAccount,
-    handleValidToken: async ({ token, decodedToken }, headers) => {
+    handleValidToken: async ({}, headers) => {
       if (PUBLIC_PATHS.includes(request.nextUrl.pathname)) {
         return redirectToHome(request);
       }
 
       return NextResponse.next({ request: { headers } });
     },
-    handleInvalidToken: async (reason) => {
+    handleInvalidToken: async () => {
       return redirectToLogin(request, {
         path: "/login",
         publicPaths: PUBLIC_PATHS,
       });
     },
-    handleError: async (error) => {
+    handleError: async () => {
       return redirectToLogin(request, {
         path: "/login",
         publicPaths: PUBLIC_PATHS,
@@ -44,10 +44,6 @@ export function redirectToLanding(request: NextRequest) {
   url.pathname = "/login";
   url.search = "";
   return NextResponse.redirect(url);
-}
-
-function redirectToLoginPage(request: NextRequest) {
-  return NextResponse.redirect(new URL("/login", request.url));
 }
 
 export const config = {
