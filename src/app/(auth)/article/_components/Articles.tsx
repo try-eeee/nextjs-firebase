@@ -6,14 +6,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/table/Table";
-import { Button } from "@/components/button/Button";
+// import { Button } from "@/components/button/Button";
 import type { Article } from "../_utils/asyncFunctions";
 import styles from "./Articles.module.scss";
 // import { formatDate } from "@/utils/formatDate";
-import { useDialog } from "@/components/dialog/Dialog";
-import { useRef, useState } from "react";
-import { ArticleEditorModal, OperationType } from "./ArticleEditorModal";
-import { FaRegTrashAlt, FaEdit, FaRegEye } from "react-icons/fa";
+// import { useDialog } from "@/components/dialog/Dialog";
+// import { useRef, useState } from "react";
+// import { ArticleEditorModal, OperationType } from "./ArticleEditorModal";
+// import { FaRegTrashAlt, FaEdit, FaRegEye } from "react-icons/fa";
 
 interface ArticleProps {
   articles: Article[];
@@ -21,46 +21,48 @@ interface ArticleProps {
 }
 
 export function Article(props: ArticleProps) {
-  const { articles, uid } = props;
-  const AricleRegisterModal = useRef<HTMLDialogElement>(null);
-  const { showModal } = useDialog(AricleRegisterModal);
-  const [operationType, setOperationType] = useState<OperationType>("create");
-  const [article, setArticle] = useState<Article | undefined>(undefined);
+  // const { articles, uid } = props;
+  const { articles } = props;
+
+  // const AricleRegisterModal = useRef<HTMLDialogElement>(null);
+  // const { showModal } = useDialog(AricleRegisterModal);
+  // const [operationType, setOperationType] = useState<OperationType>("create");
+  // const [article, setArticle] = useState<Article | undefined>(undefined);
 
   if (!articles) {
     return <></>;
   }
 
-  const handleCreateArticle = () => {
-    setOperationType("create");
-    setArticle(undefined);
-    showModal();
-  };
+  // const handleCreateArticle = () => {
+  //   setOperationType("create");
+  //   setArticle(undefined);
+  //   showModal();
+  // };
 
-  const handleDeleteArticle = (selectedArticle: Article) => {
-    setOperationType("delete");
-    setArticle(selectedArticle);
-    showModal();
-  };
+  // const handleDeleteArticle = (selectedArticle: Article) => {
+  //   setOperationType("delete");
+  //   setArticle(selectedArticle);
+  //   showModal();
+  // };
 
-  const handleEditArticle = (selectedArticle: Article) => {
-    setOperationType("edit");
-    setArticle(selectedArticle);
-    showModal();
-  };
+  // const handleEditArticle = (selectedArticle: Article) => {
+  //   setOperationType("edit");
+  //   setArticle(selectedArticle);
+  //   showModal();
+  // };
 
-  const handleViewArticle = (selectedArticle: Article) => {
-    setOperationType("view");
-    setArticle(selectedArticle);
-    showModal();
-  };
+  // const handleViewArticle = (selectedArticle: Article) => {
+  //   setOperationType("view");
+  //   setArticle(selectedArticle);
+  //   showModal();
+  // };
 
   return (
     <>
       <div className={styles.articlesHeader}>
-        <Button buttonType="default" onClick={handleCreateArticle}>
+        {/* <Button buttonType="default" onClick={handleCreateArticle}>
           新規記事作成
-        </Button>
+        </Button> */}
       </div>
       <Table
         tableHeader={
@@ -83,7 +85,7 @@ export function Article(props: ArticleProps) {
                 </TableCell>
                 <TableCell headerLabel="タイトル">{article.title}</TableCell>
                 <TableCell headerLabel="閲覧 / 編集 / 削除" width={180}>
-                  <div className={styles.editCell}>
+                  {/* <div className={styles.editCell}>
                     <FaRegEye onClick={() => handleViewArticle(article)} />
                     {article.isSelf && (
                       <>
@@ -93,19 +95,19 @@ export function Article(props: ArticleProps) {
                         />
                       </>
                     )}
-                  </div>
+                  </div> */}
                 </TableCell>
               </TableRow>
             ))}
           </>
         }
       />
-      <ArticleEditorModal
+      {/* <ArticleEditorModal
         uid={uid}
         article={article}
         operationType={operationType}
         aricleRegisterModal={AricleRegisterModal}
-      />
+      /> */}
     </>
   );
 }
