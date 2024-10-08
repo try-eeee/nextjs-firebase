@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Label.module.scss";
 
 interface LabelProps {

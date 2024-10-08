@@ -24,13 +24,15 @@ export async function middleware(request: NextRequest) {
 
       return NextResponse.next({ request: { headers } });
     },
-    handleInvalidToken: async () => {
+    handleInvalidToken: async (reson) => {
+      console.error(reson);
       return redirectToLogin(request, {
         path: "/login",
         publicPaths: PUBLIC_PATHS,
       });
     },
-    handleError: async () => {
+    handleError: async (error) => {
+      console.error(error);
       return redirectToLogin(request, {
         path: "/login",
         publicPaths: PUBLIC_PATHS,

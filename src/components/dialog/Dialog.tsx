@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Dialog.module.scss";
 import { forwardRef, RefObject, useCallback } from "react";
 

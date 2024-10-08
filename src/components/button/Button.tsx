@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Button.module.scss";
 
 type BUTTON_TYPES = "default" | "danger";
