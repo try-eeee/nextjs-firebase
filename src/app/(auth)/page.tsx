@@ -1,13 +1,14 @@
 import { getTokens } from "next-firebase-auth-edge";
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
-import { clientConfig, serverConfig } from "../config";
-import Article from "./(auth)/article/page";
+import { clientConfig, serverConfig } from "../../config";
 import { Header } from "@/components/header/Header";
 import { MainLayout } from "@/components/mainLayout/MainLayout";
-import { getUser } from "./_utils/asyncFunctions";
+import { getUser } from "@/app/_utils/asyncFunctions";
+import { Article } from "./_components/Articles";
+import { getArticles } from "./_utils/asyncFunctions";
 
-export default async function Home() {
+export default async function ArticlePage() {
   const tokens = await getTokens(cookies(), {
     apiKey: clientConfig.apiKey,
     cookieName: serverConfig.cookieName,
@@ -31,10 +32,16 @@ export default async function Home() {
     notFound();
   }
 
+  const articles = await getArticles(uid);
+
+  if (!articles) {
+    return <></>;
+  }
+
   return (
     <MainLayout>
       <Header uid={uid} user={user} title="記事一覧" />
-      <Article uid={uid} />
+      <Article articles={articles} uid={uid} />
     </MainLayout>
   );
 }

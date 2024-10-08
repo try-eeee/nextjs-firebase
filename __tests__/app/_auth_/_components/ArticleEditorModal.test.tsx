@@ -1,9 +1,8 @@
 import React, { createRef } from "react";
 import { render } from "@testing-library/react";
-import { ArticleEditorModal } from "@/app/(auth)/article/_components/ArticleEditorModal";
-import { useDialog } from "@/components/dialog/Dialog";
+import { ArticleEditorModal } from "@/app/(auth)/_components/ArticleEditorModal";
 
-jest.mock("@/app/(auth)/article/actions", () => ({
+jest.mock("@/app/(auth)/actions", () => ({
   createArticle: jest.fn(),
   updateArticle: jest.fn(),
   deleteArticle: jest.fn(),

@@ -39,7 +39,8 @@
     "src/**/*.tsx",
     ".next/types/**/*.ts",
     "__tests__/**/*",
-    "jest.config.js"
+    "jest.config.js",
+    "src/app/page.tsx___"
   ],
   "exclude": [
     "node_modules"

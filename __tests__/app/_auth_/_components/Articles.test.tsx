@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Article } from "@/app/(auth)/article/_components/Articles";
+import { Article } from "@/app/(auth)/_components/Articles";
 
-jest.mock("@/app/(auth)/article/_components/ArticleEditorModal", () => ({
+jest.mock("@/app/(auth)/_components/ArticleEditorModal", () => ({
   ArticleEditorModal: () => <div>ArticleEditorModal</div>,
 }));
 
