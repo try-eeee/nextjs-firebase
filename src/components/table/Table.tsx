@@ -1,6 +1,5 @@
-import { ComponentProps } from "react";
 import styles from "./Table.module.scss";
-import React, { ReactNode } from "react";
+import React, { ReactNode, ComponentProps } from "react";
 
 interface TableProps {
   tableHeader: ReactNode;

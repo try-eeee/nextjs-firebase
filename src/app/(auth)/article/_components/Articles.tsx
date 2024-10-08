@@ -13,8 +13,7 @@ import { formatDate } from "@/utils/formatDate";
 import { useDialog } from "@/components/dialog/Dialog";
 import { useRef, useState } from "react";
 import { ArticleEditorModal, OperationType } from "./ArticleEditorModal";
-import { FaRegTrashAlt } from "react-icons/fa";
-import { FaEdit, FaRegEye } from "react-icons/fa";
+import { FaRegTrashAlt, FaEdit, FaRegEye } from "react-icons/fa";
 
 interface ArticleProps {
   articles: Article[];

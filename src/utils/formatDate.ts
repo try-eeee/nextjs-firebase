@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * 日付をフォーマットする関数
  * @param dateString

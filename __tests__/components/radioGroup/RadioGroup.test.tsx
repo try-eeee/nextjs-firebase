@@ -1,13 +1,13 @@
 import React from "react";
 import { render, renderHook } from "@testing-library/react";
-import { useForm, UseFormRegisterReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { RadioGroup } from "@/components/radioGroup/RadioGroup";
 
 describe("RadioGroup UnitTest", () => {
   const reactHookFormMock = renderHook(() =>
     useForm<{ gender: string }>({ defaultValues: { gender: "" } })
   );
-  const { register, getValues, reset } = reactHookFormMock.result.current;
+  const { register } = reactHookFormMock.result.current;
 
   test("Snapshot Test Of RadioGroup", () => {
     const { asFragment } = render(

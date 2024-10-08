@@ -64,10 +64,10 @@ export function ArticleEditorModal(props: ArticleEditorModalProps) {
             uid,
           }),
         delete: () => {
-          return;
+          return false;
         },
         view: () => {
-          return;
+          return false;
         },
       }[operationType]();
     } catch (e) {

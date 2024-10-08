@@ -1,15 +1,31 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
-  ],
-  "plugins": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/warnings",
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": [
-      "error"
+    "no-duplicate-imports": "error",
+    "curly": "error",
+    "eqeqeq": "error",
+    "no-undef-init": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-computed-key": "error",
+    "no-useless-rename": "error",
+    "no-useless-return": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "radix": "error",
+    "yoda": [
+      "error",
+      "never",
+      {
+        "exceptRange": true
+      }
     ],
-    "printWidth": 120
+    "react-hooks/exhaustive-deps": "error"
   }
 }

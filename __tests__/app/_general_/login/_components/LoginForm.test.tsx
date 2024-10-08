@@ -3,9 +3,7 @@ import { render } from "@testing-library/react";
 import LoginForm from "@/app/(general)/login/_components/LoginForm";
 
 jest.mock("next/navigation", () => ({
-  useRouter: () => {
-    push: jest.fn();
-  },
+  useRouter: jest.fn(),
 }));
 
 describe("LoginForm UnitTest", () => {
