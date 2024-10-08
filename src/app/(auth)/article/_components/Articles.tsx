@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/button/Button";
 import type { Article } from "../_utils/asyncFunctions";
 import styles from "./Articles.module.scss";
-import { formatDate } from "@/utils/formatDate";
+// import { formatDate } from "@/utils/formatDate";
 import { useDialog } from "@/components/dialog/Dialog";
 import { useRef, useState } from "react";
 import { ArticleEditorModal, OperationType } from "./ArticleEditorModal";
@@ -79,7 +79,7 @@ export function Article(props: ArticleProps) {
                   {article.articleId}
                 </TableCell>
                 <TableCell headerLabel="更新日時" width={150}>
-                  {formatDate(article.createdAt)}
+                  {/* {formatDate(article.createdAt)} */}
                 </TableCell>
                 <TableCell headerLabel="タイトル">{article.title}</TableCell>
                 <TableCell headerLabel="閲覧 / 編集 / 削除" width={180}>
