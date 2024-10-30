@@ -309,7 +309,7 @@ export function RegisterForm() {
             <>
               利用規約に同意する 利用規約は
               <a
-                href="https://luna-matching.notion.site/a714620bbd8740d1ac98f2326fbd0bbc"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.agreementLink}
